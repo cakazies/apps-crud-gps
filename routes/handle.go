@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/local/go-postgre/application/api"
+	"github.com/local/app-gps/application/api"
 )
 
 type (

@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "ee78613b-8a5d-4ae1-9577-38d25dc90ce9",
+		"name": "app-gps",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "gps",
+			"item": [
+				{
+					"name": "Get All GPS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/gps",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"gps"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Per GPS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/gps/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"gps",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert GPS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"brand\" : \"brand try\",\n\t\"models\" : \"model try \",\n\t\"name\" : \"name try\",\n\t\"waranty\" : \"waranty try\",\n\t\"date_buy\" : \"2019-07-25 15:26:25\",\n\t\"date_sold\" : \"2019-07-25 13:22:25\",\n\t\"sold_to\" : \"sold_to try\",\n\t\"foto\" : \"Foto try\",\n\t\"description\" : \"description try\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/gps",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"gps"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Gps",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/gps/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"gps",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update GPS",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"brand\" : \"brand 1 coba2\",\n\t\"models\" : \"model 1 coba2 \",\n\t\"name\" : \"name 1 coba2\",\n\t\"waranty\" : \"waranty 1 coba2\",\n\t\"date_buy\" : \"2019-07-25 15:26:25\",\n\t\"date_sold\" : \"2019-07-25 13:22:25\",\n\t\"sold_to\" : \"sold_to try\",\n\t\"foto\" : \"Foto try\",\n\t\"description\" : \"description try\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/gps/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"gps",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Barier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJlbWFpbCI6ImVtYWlsXzNAZ21haWwuY29tIiwidGltZV9leHAiOiIyMDE5LTA3LTI4VDE0OjU3OjEzLjgwNDExNTQrMDc6MDAifQ.HL3aEq0qllO1ZAaFN-jURX7V4NHG0PafDUPbx1mtwLg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Per User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Barier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJlbWFpbCI6ImVtYWlsXzNAZ21haWwuY29tIiwidGltZV9leHAiOiIyMDE5LTA3LTI4VDE0OjU3OjEzLjgwNDExNTQrMDc6MDAifQ.HL3aEq0qllO1ZAaFN-jURX7V4NHG0PafDUPbx1mtwLg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/user/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"5"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "$2a$10$u6cPfrTyrYFgjxHVyne4lOousq7Lb4KSjGWU8tkklT5.fthYZvJFq",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"sapi2@gmail.com\",\n\t\"username\" : \"sapiderman\",\n\t\"password\" : \"password\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"admin@gmail.com\",\n\t\"password\" : \"password\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Key eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJlbWFpbCI6InNhcGkyQGdtYWlsLmNvbSIsInRpbWVfZXhwIjoiMjAxOS0wNy0yOFQxMDo0Njo0OS44NzkwNjE0KzA3OjAwIn0.1t9fctCU_YJP3dl-a9ejVZ4ZtaRGJ0aqp6wQm8XPw68",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"sapi2@gmail.com\",\n\t\"username\" : \"sapiderman\",\n\t\"password\" : \"sapiderman\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/user/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Barier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJlbWFpbCI6ImVtYWlsXzNAZ21haWwuY29tIiwidGltZV9leHAiOiIyMDE5LTA3LTI4VDE0OjU3OjEzLjgwNDExNTQrMDc6MDAifQ.HL3aEq0qllO1ZAaFN-jURX7V4NHG0PafDUPbx1mtwLg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/user/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"2"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"sapi2@gmail.com\",\n\t\"password\" : \"sapii\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

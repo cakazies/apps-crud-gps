@@ -8,12 +8,12 @@ import (
 	"testing"
 
 	"github.com/gorilla/mux"
-	"github.com/local/go-postgre/application/api"
+	"github.com/local/app-gps/application/api"
 
-	mw "github.com/local/go-postgre/application/middleware"
-	conf "github.com/local/go-postgre/application/models"
-	"github.com/local/go-postgre/routes"
-	"github.com/local/go-postgre/utils"
+	mw "github.com/local/app-gps/application/middleware"
+	conf "github.com/local/app-gps/application/models"
+	"github.com/local/app-gps/routes"
+	"github.com/local/app-gps/utils"
 	"github.com/spf13/viper"
 )
 
@@ -52,14 +52,13 @@ func TestInit(t *testing.T) {
 }
 
 func getRequest(url, path string, handler routes.HandlerFunc) *httptest.ResponseRecorder {
-	// req, err := http.NewRequest("GET", "http://127.0.0.1:8000/api/getroom/1", nil)
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		log.Fatalln(err)
 	}
 
 	r := mux.NewRouter()
-	r.Handle(path, routes.HandlerFunc(api.GetRoom))
+	r.Handle(path, routes.HandlerFunc(api.GetGPS))
 	r.Handle(path, routes.HandlerFunc(handler))
 	r.Use(mw.JwtAuthentication)
 
@@ -75,7 +74,7 @@ func postRequest(url, path string, handler routes.HandlerFunc) *httptest.Respons
 	}
 
 	r := mux.NewRouter()
-	r.Handle(path, routes.HandlerFunc(api.GetRoom))
+	r.Handle(path, routes.HandlerFunc(api.GetGPS))
 	r.Handle(path, routes.HandlerFunc(handler))
 	r.Use(mw.JwtAuthentication)
 

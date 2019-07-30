@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	GetDB *gorm.DB
+	GetDB *gorm.DB // connection about DB
 )
 
 func Connect() {

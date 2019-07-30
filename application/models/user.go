@@ -28,7 +28,7 @@ type ManyUser []User
 
 const table = "users"
 
-// GetRooms function for get all data from table
+// GetAllUserPanel function for get all data from table user
 func GetAllUserPanel(w http.ResponseWriter, r *http.Request) ([]*User, error) {
 	var value []*User
 	err := GetDB.Where("status = ?", "2").Find(&value).Error
@@ -59,7 +59,7 @@ func GetUserPanel(w http.ResponseWriter, r *http.Request) (*User, error) {
 	return &value, nil
 }
 
-// UpdateUserPanel function for update data rooms
+// UpdateUserPanel function for update data users
 func UpdateUserPanel(w http.ResponseWriter, r *http.Request) (map[string]interface{}, error) {
 	params := mux.Vars(r)
 	id, _ := strconv.Atoi(params["id"])
@@ -82,7 +82,7 @@ func UpdateUserPanel(w http.ResponseWriter, r *http.Request) (map[string]interfa
 	return nil, nil
 }
 
-// DeleteRoom function for delete one data in table rooms
+// DeleteUserPanel function for delete one data in table users
 func DeleteUserPanel(w http.ResponseWriter, r *http.Request) (string, error) {
 	params := mux.Vars(r)
 	id, _ := strconv.Atoi(params["id"])
@@ -120,7 +120,7 @@ func (user *User) Validate() (map[string]interface{}, bool) {
 	return map[string]interface{}{"status": "Valid", "message": "Requirement passed"}, true
 }
 
-// asds
+// RegisterUserPanel function for register first time user
 func (user *User) RegisterUserPanel() map[string]interface{} {
 	if rsp, status := user.Validate(); !status {
 		return rsp

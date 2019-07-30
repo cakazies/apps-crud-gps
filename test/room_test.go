@@ -8,8 +8,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/local/go-postgre/application/api"
-	"github.com/local/go-postgre/routes"
+	"github.com/local/app-gps/application/api"
+	"github.com/local/app-gps/routes"
 )
 
 type testCase struct {
@@ -40,7 +40,7 @@ func TestDeleteRoom(t *testing.T) {
 			expectedData: "5",
 			expectedCode: http.StatusOK,
 			path:         "api/deleteroom",
-			handler:      api.DeleteRoom,
+			handler:      api.GetGPS,
 			query:        "",
 		},
 		{
@@ -49,7 +49,7 @@ func TestDeleteRoom(t *testing.T) {
 			expectedData: "<nil>",
 			expectedCode: http.StatusBadRequest,
 			path:         "api/deleteroom",
-			handler:      api.DeleteRoom,
+			handler:      api.GetGPS,
 			query:        "",
 		},
 	}
@@ -81,7 +81,7 @@ func TestGetRoom(t *testing.T) {
 			expectedData: Cfg.RoomID,
 			expectedCode: http.StatusOK,
 			path:         "api/getroom",
-			handler:      api.GetRoom,
+			handler:      api.GetGPS,
 			query:        "",
 		},
 		{
@@ -90,7 +90,7 @@ func TestGetRoom(t *testing.T) {
 			expectedData: "<nil>", // because not value
 			expectedCode: http.StatusBadRequest,
 			path:         "api/getroom",
-			handler:      api.GetRoom,
+			handler:      api.GetGPS,
 			query:        "",
 		},
 		{
@@ -99,7 +99,7 @@ func TestGetRoom(t *testing.T) {
 			expectedData: "<nil>", // because not value
 			expectedCode: http.StatusBadRequest,
 			path:         "api/getroom",
-			handler:      api.GetRoom,
+			handler:      api.GetGPS,
 			query:        "",
 		},
 	}

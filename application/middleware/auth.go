@@ -28,6 +28,7 @@ var JwtAuthentication = func(next http.Handler) http.Handler {
 		}
 		tokenHeader := r.Header.Get("Authorization")
 
+		// check for token present or not
 		if tokenHeader == "" {
 			rsp := map[string]interface{}{"status": "invalid", "message": "Token is not Present ;"}
 			w.Header().Add("Content-Type", "application/json")
@@ -35,6 +36,7 @@ var JwtAuthentication = func(next http.Handler) http.Handler {
 			return
 		}
 
+		// check format auth token valid or not
 		headerAuthorizationString := strings.Split(tokenHeader, " ")
 		if len(headerAuthorizationString) != 2 {
 			rsp := map[string]interface{}{"status": "invalid", "message": "Invalid/Format Auth Token ;"}
@@ -43,6 +45,7 @@ var JwtAuthentication = func(next http.Handler) http.Handler {
 			return
 		}
 
+		// type token barier or not
 		barier := headerAuthorizationString[0]
 		if barier != "Barier" {
 			rsp := map[string]interface{}{"status": "invalid", "message": "Token is not Barier ;"}
@@ -57,6 +60,7 @@ var JwtAuthentication = func(next http.Handler) http.Handler {
 			return []byte(viper.GetString("api.secret_key")), nil
 		})
 
+		// somthing went wrong, about token, please reset token
 		if err != nil {
 			rsp := map[string]interface{}{"status": "invalid", "message": "Malformed Authentication Token Please Login Again;"}
 			w.Header().Add("Content-Type", "application/json")
@@ -88,6 +92,7 @@ var JwtAuthentication = func(next http.Handler) http.Handler {
 			return
 		}
 
+		// check format token valid or not
 		if !token.Valid {
 			rsp := map[string]interface{}{"status": "invalid", "message": "Invalid/Format Auth Token ;"}
 			w.Header().Add("Content-Type", "application/json")
@@ -95,7 +100,6 @@ var JwtAuthentication = func(next http.Handler) http.Handler {
 			return
 		}
 
-		// fmt.Sprintf("User Id is %s", tk.UserId)
 		ctx := context.WithValue(r.Context(), "user", tk.UserId)
 		r = r.WithContext(ctx)
 		next.ServeHTTP(w, r)

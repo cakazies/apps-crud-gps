@@ -66,7 +66,7 @@ func MigrationGPS(limit int) {
 	log.Println(fmt.Sprintf("Insert Data Dummy table %s successfull", tableName))
 }
 
-// MigrationUser function fordsdxfsad
+// MigrationUser function for migration table user
 func MigrationUser(limit int) {
 	tableName := "users"
 	drop := fmt.Sprintf("DROP TABLE IF EXISTS %s;", tableName)

@@ -13,7 +13,7 @@ import (
 	"github.com/local/app-gps/utils"
 )
 
-// struct rooms
+// struct GPS
 type Gps struct {
 	Brand       string `json:"brand,omitemp"`
 	Models      string `json:"models,omitemp"`
@@ -27,10 +27,10 @@ type Gps struct {
 	gorm.Model
 }
 
-// strtuck for many room array
+// strtuck for many gps array
 type ManyGps []Gps
 
-// GetRooms function for get all data from table
+// GetAllGPS function for get all data from table gps
 func GetAllGPS(w http.ResponseWriter, r *http.Request) ([]*Gps, error) {
 	// qulimit := ""
 	// quShort := ""
@@ -46,7 +46,7 @@ func GetAllGPS(w http.ResponseWriter, r *http.Request) ([]*Gps, error) {
 	return value, nil
 }
 
-// // GetRoom functionfor get perRooms
+// GetGPS functionfor get pergps
 func GetGPS(w http.ResponseWriter, r *http.Request) (*Gps, error) {
 	params := mux.Vars(r)
 	id, _ := strconv.Atoi(params["id"])
@@ -69,7 +69,7 @@ func GetGPS(w http.ResponseWriter, r *http.Request) (*Gps, error) {
 	return &value, nil
 }
 
-// UpdateRooms function for update data rooms
+// UpdateGPS function for update data gps
 func UpdateGPS(w http.ResponseWriter, r *http.Request) (map[string]interface{}, error) {
 	params := mux.Vars(r)
 	id, _ := strconv.Atoi(params["id"])
@@ -94,7 +94,7 @@ func InsertGPS(w http.ResponseWriter, r *http.Request) (map[string]interface{}, 
 	return nil, nil
 }
 
-// DeleteRoom function for delete one data in table rooms
+// DeleteGPS function for delete one data in table gps
 func DeleteGPS(w http.ResponseWriter, r *http.Request) (string, error) {
 	params := mux.Vars(r)
 	id, _ := strconv.Atoi(params["id"])
@@ -111,19 +111,3 @@ func DeleteGPS(w http.ResponseWriter, r *http.Request) (string, error) {
 
 	return "Berhasil dihapus", nil
 }
-
-// CekExistData function for validate data exist
-// func CekExistData(id int) error {
-// 	rm_id := ""
-// 	sql := "SELECT rm_id FROM rooms WHERE rm_id = $1"
-// 	statement, err := DB.Prepare(sql)
-// 	defer statement.Close()
-// 	if err != nil {
-// 		return err
-// 	}
-// 	err = statement.QueryRow(id).Scan(&rm_id)
-// 	if err != nil {
-// 		return errors.New("ID Doesn't Exist")
-// 	}
-// 	return nil
-// }
