@@ -24,8 +24,8 @@ var (
 )
 
 type testCaseParams struct {
-	RoomID string
-	URL    string
+	ID  string
+	URL string
 }
 
 func initCOnfig() {
@@ -46,8 +46,8 @@ func TestInit(t *testing.T) {
 	initCOnfig()
 	conf.Connect()
 	Cfg = testCaseParams{
-		RoomID: viper.GetString("testing.room_id"),
-		URL:    viper.GetString("app.host"),
+		ID:  viper.GetString("testing.room_id"),
+		URL: viper.GetString("app.host"),
 	}
 }
 
