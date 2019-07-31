@@ -32,47 +32,6 @@ type Rest struct {
 	Code    string `json:"code,omitempty"`
 }
 
-// func TestDeleteRoom(t *testing.T) {
-// 	tasks := []testCase{
-// 		{
-// 			name:         "Testing Insert with data valid",
-// 			input:        "5",
-// 			expectedData: "5",
-// 			expectedCode: http.StatusOK,
-// 			path:         "api/deleteroom",
-// 			handler:      api.GetGPS,
-// 			query:        "",
-// 		},
-// 		{
-// 			name:         "Testing Delete with Data Invalid",
-// 			input:        "9897",
-// 			expectedData: "<nil>",
-// 			expectedCode: http.StatusBadRequest,
-// 			path:         "api/deleteroom",
-// 			handler:      api.GetGPS,
-// 			query:        "",
-// 		},
-// 	}
-
-// 	for _, tc := range tasks {
-// 		t.Run(tc.name, func(t *testing.T) {
-// 			// url := fmt.Sprintf("http://%s/%s?%s", cfg.URL, tc.input, tc.query)
-// 			url := fmt.Sprintf("http://%s/%s/%s", Cfg.URL, tc.path, tc.input)
-// 			resp := postRequest(url, "", tc.handler)
-// 			assert.Equal(t, resp.Code, tc.expectedCode, "Expedted Code is Wrong")
-// 			// if resp.Code != tc.expectedCode {
-// 			// 	t.Errorf("Expected:%d , But Got :%d - message:%v", tc.expectedCode, resp.Code, resp.Body)
-// 			// }
-// 			buf := resp.Body.Bytes()
-// 			var respData Response
-// 			if err := json.Unmarshal(buf, &respData); err != nil {
-// 				t.Error("Can not parsing response testing. Error :", err)
-// 			}
-
-// 		})
-// 	}
-// }
-
 func TestGetRoom(t *testing.T) {
 	tasks := []testCase{
 		{
@@ -80,7 +39,7 @@ func TestGetRoom(t *testing.T) {
 			input:        Cfg.ID,
 			expectedData: Cfg.ID,
 			expectedCode: http.StatusOK,
-			path:         "api/getroom",
+			path:         "api/gps",
 			handler:      api.GetGPS,
 			query:        "",
 		},
@@ -89,7 +48,7 @@ func TestGetRoom(t *testing.T) {
 			input:        "9897",
 			expectedData: "<nil>", // because not value
 			expectedCode: http.StatusBadRequest,
-			path:         "api/getroom",
+			path:         "api/gps",
 			handler:      api.GetGPS,
 			query:        "",
 		},
@@ -98,7 +57,7 @@ func TestGetRoom(t *testing.T) {
 			input:        "abc",
 			expectedData: "<nil>", // because not value
 			expectedCode: http.StatusBadRequest,
-			path:         "api/getroom",
+			path:         "api/gps",
 			handler:      api.GetGPS,
 			query:        "",
 		},
